@@ -91,6 +91,10 @@ export function useStore() {
     setConfig(prev => ({ ...prev, ...updates }));
   };
 
+  const importVendors = (newVendors: Vendor[]) => {
+    setVendors(newVendors);
+  };
+
   // Computed stats
   const totalInvitados = guests.reduce((sum, g) => sum + g.pases, 0);
   const confirmados = guests.filter(g => g.status === 'confirmado').reduce((sum, g) => sum + g.pases, 0);
@@ -109,7 +113,7 @@ export function useStore() {
 
   return {
     vendors, guests, config,
-    addVendor, updateVendor, deleteVendor, addPayment,
+    addVendor, updateVendor, deleteVendor, addPayment, importVendors,
     addGuest, updateGuest, deleteGuest,
     updateConfig,
     stats: {
