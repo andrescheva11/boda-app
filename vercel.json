@@ -1,0 +1,5 @@
+{
+  "buildCommand": "bun run css:build && bun build ./frontend/index.html --outdir ./dist --target browser",
+  "outputDirectory": "dist",
+  "installCommand": "bun install"
+}
